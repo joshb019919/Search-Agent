@@ -5,7 +5,7 @@ An intelligent agent which performs depth-first and breadth-first searches to so
 python search_agent.py
 
 # Dependencies
-Python 3
+Python 3.6+
 
 # Description
 ### The Game
