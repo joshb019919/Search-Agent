@@ -58,6 +58,7 @@ class Environment:
     """Defines the environment for the Missionaries and Cannibals problem."""
     def __init__(self, start_state):
         self.start_state = start_state
+        self.state_id = "A"  # Starting state ID
 
     def get_factors(self, state):
         """Returns the number and locations of missionaries, cannibals, and the boat."""
@@ -127,7 +128,7 @@ def run_dfs():
         while stack:
             state = stack.pop()
             if state not in visited:
-                path.append(state)
+                path.append((environment.state_id, state))
                 visited.add(state)
                 if environment.is_goal(state):
                     return path
@@ -136,6 +137,7 @@ def run_dfs():
                     path.pop()
                 for next_state in environment.get_valid_states(state):
                     if next_state not in visited:
+                        environment.state_id = chr(ord(environment.state_id) + 1)
                         stack.append(next_state)
         return None
     return dfs()
@@ -158,7 +160,7 @@ def run_bfs():
                 # If no valid next states or all have been visited, backtrack
                 # Otherwise, find more states to explore
 
-        queue.append((environment.start_state, [environment.start_state]))
+        queue.append((environment.start_state, [(environment.state_id, environment.start_state)]))
         while queue:
             (state, path) = queue.pop(0)
             if state not in visited:
@@ -170,21 +172,26 @@ def run_bfs():
                     path.pop()
                 for next_state in next_states:
                     if next_state not in visited:
-                        queue.append((next_state, path + [next_state]))
+                        environment.state_id = chr(ord(environment.state_id) + 1)
+                        queue.append((next_state, path + [(environment.state_id, next_state)]))
         return None
     return bfs()
 
 
 def main():
+    """Print the solutions found by DFS and BFS."""
+    print("Missionaries and Cannibals Problem Solutions\n============================================\n")
+    print("e.g., '<state_id>: (<left_m>, <left_c>, <boat_side>)'\n")
+
     print("DFS SOLUTION:\n-------------")
-    for state in run_dfs():
-        print(state)
+    for state_id, state in run_dfs():
+        print(f"{state_id}: {state}")
 
     print("\n")
 
     print("BFS SOLUTION:\n-------------")
-    for state in run_bfs():
-        print(state)
+    for state_id, state in run_bfs():
+        print(f"{state_id}: {state}")
 
 
 if __name__ == "__main__":
