@@ -14,6 +14,11 @@ Solves the Missionaries vs. Cannibals problem in state space searches.
 
 Finds the optimal path through Romania from one city to another.
 
+### Admissibility and Consistency Check
+- A*
+
+Checks the admissibility and consistency of the heuristics of the data used in the searches.
+
 # Usage
 python search_agent.py
 
@@ -42,4 +47,10 @@ This program implements and runs both algorithms in the main() function.  The 3-
 
 
 ### The Algorithms
+
+# Admissibility and Consistency Checks
+### Admissibility
+
+
+### Consistency
 
