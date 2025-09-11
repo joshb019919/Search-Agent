@@ -1,5 +1,18 @@
-# Search-Agent
-An intelligent agent which performs depth-first and breadth-first searches to solve the Missionaries vs. Cannibals problem in state space searches.
+# Search-Agents
+Pathfinding intelligent agents utilizing these algorithms:
+
+### Uninformed Search
+- Depth-first Search (DFS)
+- Breadth-first Search (BFS)
+
+Solves the Missionaries vs. Cannibals problem in state space searches.
+
+### Informed Search
+- Uniform-cost Search (UCS)
+- Greedy Best-first Search
+- A*
+
+Finds the optimal path through Romania from one city to another.
 
 # Usage
 python search_agent.py
@@ -7,7 +20,7 @@ python search_agent.py
 # Dependencies
 Python 3.6+
 
-# Description
+# Uninformed Search Description
 ### The Game
 The missionaries versus cannibals problem, also known by other names throughout history ([https://www.wikiwand.com/en/articles/Missionaries_and_cannibals_problem]), involves three missionaries and three cannibals on one side of a river.  They have a boat which can carry exactly one or two people.  They need to cross the river, but at no time may the cannibals outnumber the missionaries on either side of the river.  
 
@@ -20,3 +33,13 @@ Depth-first search (DFS) means checking the neighbors of the first neighbor stat
 Breadth-first search (BFS) means checking each neighbor of a state or node to find all their neighbors before trying any deeper layer of neighboring states.  Imagine exploring a pyramid buried all the way to the tip, but making sure you explore every room on each level before moving downward.
 
 This program implements and runs both algorithms in the main() function.  The 3-on-3 MvC problem isn't a particularly big one, and the optimal path to the goal includes only 12 states.
+
+# Informed Search Description
+### Romania
+
+
+### The Program
+
+
+### The Algorithms
+
